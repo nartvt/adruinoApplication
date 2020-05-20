@@ -1,54 +1,53 @@
 import React, {Component} from 'react';
 import {
+  ImageBackground,
+  StyleSheet,
   Text,
   View,
-  SafeAreaView,
-  StyleSheet,
-  Dimensions,
-  ImageBackground,
-  TouchableOpacity,
+  KeyboardAvoidingView,
 } from 'react-native';
+import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 import {backGroundImageHomePage} from '../utils/Contants';
-
-const widthDevice = Dimensions.get('window').width;
-const heightDevice = Dimensions.get('window').height;
 
 export class ControlScreen extends Component {
   render() {
     return (
-      <>
-        <SafeAreaView style={styles.container}>
-          <View style={{alignItems: 'center'}}>
+      <ImageBackground source={backGroundImageHomePage} resizeMode="contain">
+        <KeyboardAvoidingView style={styles.container}>
+          <View style={styles.home}>
             <Text style={styles.text}>Home Screen</Text>
           </View>
-          <TouchableOpacity onPress={() => {}}>
-            {/* <SafeAreaView style={styles.container}> */}
-            <ImageBackground
-              source={backGroundImageHomePage}
-              style={styles.image}
+
+          <View>
+            <TextInput
+              placeholder="IP address"
+              keyboardType="default"
+              returnKeyLabel="Next"
+              placeholderTextColor="orange"
+              // onChangeText={handleChange('taiKhoan')}
+              autoCapitalize="none"
+              style={styles.formControl}
             />
-            {/* </SafeAreaView> */}
-          </TouchableOpacity>
-        </SafeAreaView>
-      </>
+            <TouchableOpacity style={styles.buttonStyles}>
+              <Text style={{color: 'black'}}>Connect</Text>
+            </TouchableOpacity>
+          </View>
+        </KeyboardAvoidingView>
+      </ImageBackground>
     );
   }
 }
 const styles = StyleSheet.create({
   container: {
+    position: 'relative',
+    top: 0,
+    left: 0,
     flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#fff',
+    alignItems: 'center',
+    backgroundColor: 'white',
   },
-  image: {
-    flex: 1,
-    resizeMode: 'cover',
-    width: widthDevice,
-    height: 400,
-  },
-  buttonStyles: {
-    width: '100%',
-    height: '100%',
+  home: {
+    alignItems: 'center',
   },
   text: {
     marginTop: 50,
@@ -56,6 +55,30 @@ const styles = StyleSheet.create({
     color: 'grey',
     fontSize: 30,
     fontWeight: 'bold',
+  },
+  buttonStyles: {
+    backgroundColor: '#66ffff',
+    width: 80,
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    left: '40%',
+    borderRadius: 5,
+  },
+  formControl: {
+    top: 0,
+    left: 0,
+    bottom: 0,
+    borderColor: 'blue',
+    borderWidth: 1,
+    paddingVertical: 10,
+    paddingHorizontal: 5,
+    alignItems: 'center',
+    fontSize: 20,
+    color: 'red',
+    borderRadius: 5,
+    marginBottom: 10,
+    width: 350,
   },
 });
 

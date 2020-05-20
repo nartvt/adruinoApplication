@@ -21,18 +21,6 @@ export class ControlButton extends Component {
           <View>
             <Text style={styles.text}>Home Screen</Text>
           </View>
-          <View>
-            <TouchableOpacity
-             
-              onPress={() => {}}>
-              {/* <SafeAreaView style={styles.container}> */}
-              <ImageBackground
-                source={backGroundImageHomePage}
-                style={styles.image}
-              />
-              {/* </SafeAreaView> */}
-            </TouchableOpacity>
-          </View>
         </View>
       </>
     );
