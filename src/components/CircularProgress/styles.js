@@ -1,0 +1,40 @@
+import {StyleSheet} from 'react-native';
+export const styles = StyleSheet.create({
+  container: {
+    top: 50,
+    left: 50,
+    // width: 200,
+    // height: 200,
+    // borderWidth: 20,
+    // borderRadius: 100,
+    // borderColor: 'grey',
+    // justifyContent: 'center',
+    // alignItems: 'center',
+  },
+  progressLayer: {
+    width: 200,
+    height: 200,
+    borderWidth: 20,
+    borderRadius: 100,
+    position: 'absolute',
+    borderLeftColor: 'transparent',
+    borderBottomColor: 'transparent',
+    borderRightColor: '#3498db',
+    borderTopColor: '#3498db',
+    transform: [{rotate: '-45deg'}],
+  },
+  offsetLayer: {
+    width: 200,
+    height: 200,
+    borderWidth: 20,
+    borderRadius: 100,
+    borderLeftColor: 'transparent',
+    borderBottomColor: 'transparent',
+    borderRightColor: 'grey',
+    borderTopColor: 'grey',
+    transform: [{rotateZ: '-135deg'}],
+  },
+  textstyle: {
+    fontSize: 18,
+  },
+});

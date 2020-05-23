@@ -1,7 +1,8 @@
-import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import ControlScreen from '../screens';
+import React from 'react';
+import CircleScreen from '../screens/Circle';
+import HomeScreen from '../screens/Home';
 
 const Stack = createStackNavigator();
 
@@ -9,9 +10,14 @@ const AppContainer = () => (
   <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen
-        name="ControlScreen"
-        component={ControlScreen}
+        name="home"
+        component={HomeScreen}
         options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="circle"
+        component={CircleScreen}
+        // options={{headerShown: false}}
       />
     </Stack.Navigator>
   </NavigationContainer>
